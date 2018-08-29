@@ -21,14 +21,12 @@ void add(STU **head) {
 
 	p=malloc(sizeof(*p));
 	scanf("%d %s", &p->num, p->name);
-	singly_list_add(head, p);
-	print(*head);
+	print(singly_list_add(head, p));
 }
 
 void sort(STU ** head)
 {
-	singly_list_sort(head);
-	print(*head);
+	print(singly_list_sort(head));
 }
 
 int main(int argc, const char *argv[])
