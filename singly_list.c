@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <singly_list.h>
 
-void singly_list_add(STU **head ,STU *padd)
+STU * singly_list_add(STU **head ,STU *padd)
 {
 	STU **curr = head;
 
@@ -15,6 +15,8 @@ void singly_list_add(STU **head ,STU *padd)
 
 	padd->next = *curr;
 	*curr = padd;
+
+	return *head;
 }
 
 STU * singly_list_del(STU **head,int num)
@@ -46,17 +48,18 @@ int singly_list_node_count(STU * head)
 
 }
 
-void singly_list_sort(STU **head)
+STU * singly_list_sort(STU **head)
 {
 	int i;
 	int count;
+	STU **curr;
 
 	count = singly_list_node_count(*head);
 	if(count < 1)
-		return;
+		goto out;
 
 	for (i = 0; i < count -1; i++) {
-		STU **curr = head;
+		curr = head;
 		while (*curr && (*curr)->next) {
 			STU *entry = *curr;
 			if(entry->num > entry->next->num) {
@@ -69,4 +72,6 @@ void singly_list_sort(STU **head)
 		}
 	}
 
+out:
+	return *head;
 }
