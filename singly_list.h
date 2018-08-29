@@ -1,5 +1,5 @@
 #ifndef __SINGLY_LIST__H__
-#define __SINGLY_LIST__H__ 
+#define __SINGLY_LIST__H__
 
 typedef struct student {
 	int num;

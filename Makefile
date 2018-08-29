@@ -1,13 +1,13 @@
 CC = gcc
 
-OBJ = singly_list.o main.o
-LIB = 
-INCLUDE =  -I./
+OBJ = $(patsubst %.c, %.o, $(wildcard *.c))
+LIB =
+INCLUDE = -I./
 CFLAGS = -Werror -g
 
 target = main 
 
-all: $(OBJ) 
+all: $(OBJ)
 	$(CC) $^ -o $(target) $(LIB)
 
 %.o: %.c

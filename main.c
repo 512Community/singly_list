@@ -50,7 +50,6 @@ int main(int argc, const char *argv[])
 			case 4:
 				sort(&head);
 				break;
-			
 			default:
 				return 0;
 		}
