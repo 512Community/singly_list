@@ -2,26 +2,30 @@
 #include <stdlib.h>
 #include <singly_list.h>
 STU * head = NULL;
-void print (STU *head) {
+void print (STU *head)
+{
 	while(head) {
 		printf("num:%d name:%s\n", head->num, head->name);
 		head = head->next;
 	}
 }
 
-void delete(STU **head) {
-	int num;
-
-	scanf("%d",&num);
-	free(singly_list_del(head, num));
-	print(*head);
-}
-void add(STU **head) {
+void add(STU **head)
+{
 	STU * p;
 
 	p=malloc(sizeof(*p));
 	scanf("%d %s", &p->num, p->name);
 	print(singly_list_add(head, p));
+}
+
+void delete(STU **head)
+{
+	int num;
+
+	scanf("%d",&num);
+	free(singly_list_del(head, num));
+	print(*head);
 }
 
 void sort(STU ** head)
