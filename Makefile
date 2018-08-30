@@ -3,7 +3,7 @@ CC = gcc
 OBJ = $(patsubst %.c, %.o, $(wildcard *.c))
 LIB =
 INCLUDE = -I./
-CFLAGS = -Werror -g
+CFLAGS = -Werror -g 
 
 target = main 
 
